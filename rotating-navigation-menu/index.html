@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rotating navigation page</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="">
+        <div class="nav-burger-container">
+          <div class="burger">
+            <button id="close">
+              <i class="fas fa-times"></i>
+            </button>
+            <button id="open">
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="progress-container">
+          <div class="progress" id="progress"></div>
+          <div class="circle active">1</div>
+          <div class="circle">2</div>
+          <div class="circle">3</div>
+          <div class="circle">4</div>
+          <div class="circle">5</div>
+        </div>
+
+        <div class="btn-container">
+          <button class="btn" id="prev" disabled="disabled">Prev</button>
+          <button class="btn" id="next">Next</button>
+        </div>
+      </div>
+    </main>
+
+    <nav>
+      <ul>
+        <li><a>Home</a></li>
+        <li><a>About</a></li>
+        <li><a>Contact</a></li>
+      </ul>
+    </nav>
+
+    <script src="index.js"></script>
+  </body>
+</html>

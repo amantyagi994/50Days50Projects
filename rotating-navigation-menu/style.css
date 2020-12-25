@@ -1,0 +1,209 @@
+:root {
+  --progress-fill: #7371fc;
+  --non-fill: #d0efb1;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #757575;
+}
+
+button {
+  cursor: pointer;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+nav {
+  position: fixed;
+  bottom: 3rem;
+  left: 0;
+}
+
+nav ul {
+  padding-left: 2rem;
+  list-style: none;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  margin: 1.5rem 0;
+  transform: translateX(-200%);
+  transition: 0.4s linear;
+}
+
+nav ul li {
+  margin-left: 1rem;
+}
+
+nav ul li + li {
+  margin-left: 0.5rem;
+}
+
+nav ul li + li + li {
+  margin-left: 0;
+}
+
+main.nav-active + nav ul li {
+  margin-left: 1rem;
+}
+
+main.nav-active + nav ul li + li {
+  margin-left: 1.5rem;
+}
+
+main.nav-active + nav ul li + li + li {
+  margin-left: 2rem;
+}
+
+.nav-burger-container {
+  position: fixed;
+  top: -6rem;
+  left: -6rem;
+  z-index: 100;
+}
+
+.burger {
+  background-color: var(--progress-fill);
+  height: 12rem;
+  width: 12rem;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.4s linear;
+}
+
+.burger button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 6rem;
+  background: transparent;
+  font-size: 1.5rem;
+  color: var(--non-fill);
+}
+
+.burger button:focus {
+  outline: none;
+}
+
+.burger button#open {
+  top: 47%;
+  left: 64%;
+}
+
+.burger button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #cc95c0, #dbd4b4, #7aa1d2);
+  transition: transform 0.4s linear;
+  transform-origin: top left;
+  z-index: 200;
+}
+
+main.nav-active {
+  transform: rotate(-20deg);
+}
+
+main.nav-active + nav ul li {
+  transform: translateX(0);
+}
+
+main.nav-active .burger {
+  transform: rotate(-80deg);
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  width: 20rem;
+}
+
+.progress-container::before {
+  content: "";
+  background: var(--non-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 0.25rem;
+  width: 100%;
+  transform: translateY(-50%);
+  transition: 0.4s ease-in-out;
+  z-index: 0;
+}
+
+.progress {
+  background: var(--progress-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 0.25rem;
+  width: 0%;
+  transform: translateY(-50%);
+  transition: 0.3s ease-in-out;
+}
+
+.circle {
+  background-color: #ffc400;
+  color: #b8b8b8;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--non-fill);
+  z-index: 5;
+  font-weight: bold;
+  transition: 0.5s ease;
+}
+
+.circle.active {
+  border-color: var(--progress-fill);
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  color: rgb(250, 250, 250);
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  background-color: var(--progress-fill);
+  box-shadow: 0 5px 5px #00000055;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--non-fill);
+  color: #757575;
+}
