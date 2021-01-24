@@ -1,0 +1,117 @@
+:root {
+  --left-bg: rgba(87, 84, 236, 0.7);
+  --right-bg: rgba(43, 43, 43, 0.7);
+  --hover-width: 75%;
+  --other-width: 25%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+main {
+  min-height: 100vh;
+  background-color: aqua;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: #333333;
+}
+
+h2 {
+  font-size: 3rem;
+  color: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 35%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: white;
+  border: #ffffff solid 3px;
+  padding: 0.5rem 4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 2px;
+  transition: 0.4s ease-in-out;
+  white-space: nowrap;
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.8s ease-in-out;
+}
+
+.split.left {
+  left: 0;
+  background: url("./charles-sims-QHha7JOJYnw-unsplash.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.split.left::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg);
+}
+
+.split.left .btn:hover {
+  background-color: rgba(43, 43, 43, 0.7);
+  border-color: rgba(43, 43, 43, 0.7);
+}
+.split.right .btn:hover {
+  background-color: rgba(87, 84, 236, 0.7);
+  border-color: rgba(87, 84, 236, 0.7);
+}
+
+.split.right {
+  right: 0;
+  background: url("./UBuznhsf4QTiNbTYtvQ7wi.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.split.right::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg);
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+}
